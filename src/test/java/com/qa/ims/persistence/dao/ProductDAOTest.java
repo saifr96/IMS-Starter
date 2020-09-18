@@ -11,13 +11,13 @@ import org.junit.Test;
 import org.junit.runners.MethodSorters;
 import org.junit.FixMethodOrder;
 
-import com.qa.ims.persistence.domain.Customer;
+import com.qa.ims.persistence.domain.Product;
 import com.qa.ims.utils.DBUtils;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class CustomerDAOTest {
+public class ProductDAOTest {
 
-	private final CustomerDAO DAO = new CustomerDAO();
+	private final ProductDAO DAO = new ProductDAO();
 
 	@BeforeClass
 	public static void init() {
@@ -31,33 +31,32 @@ public class CustomerDAOTest {
 
 	@Test
 	public void test1Create() {
-		final Customer created = new Customer(1L, "chris", "perrins");
+		final Product created = new Product(1L,"coke", 2.99);
 		assertEquals(created, DAO.create(created));
 	}
 
 	@Test
 	public void test2ReadAll() {
-		List<Customer> expected = new ArrayList<>();
-		expected.add(new Customer(1L, "chris", "perrins"));
+		List<Product> expected = new ArrayList<>();
+		expected.add(new Product(1L, "coke", 2.99));
 		assertEquals(expected, DAO.readAll());
 	}
 
 	@Test
 	public void test3Read() {
 		final long ID = 1L;
-		assertEquals(new Customer(ID, "chris", "perrins"), DAO.readCustomer(ID));
+		assertEquals(new Product(ID, "coke", 2.99), DAO.readProduct(ID));
 	}
 
 	@Test
 	public void test4Update() {
-		final Customer updated = new Customer(1L, "jordan", "harrison");
+		final Product updated = new Product(1L, "7up", 2.49);
 		assertEquals(updated, DAO.update(updated));
-
 	}
 	
 	@Test
 	public void test5ReadLatest() {
-		assertEquals(new Customer(1L, "jordan", "harrison"), DAO.readLatest());
+		assertEquals(new Product(1L, "7up",  2.49), DAO.readLatest());
 	}
 
 	@Test
