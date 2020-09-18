@@ -32,12 +32,18 @@ Explain what these tests test and why Give an example
 
 Deployment Add additional notes about how to deploy this on a live system
 
-Built With • Maven - Dependency Management
+Built With 
+• Maven - Dependency Management
 
 Versioning We use SemVer for versioning.
 
-Authors • Chris Perrins - Initial work - christophperrins • Saif Raja
+Authors
+• Chris Perrins - Initial work - christophperrins 
+• Saif Raja
 
 License This project is licensed under the MIT license - see the LICENSE.md file for details For help in Choosing a license
 
-Acknowledgments • Hat tip to anyone whose code was used • Inspiration • etc
+Acknowledgments 
+• Hat tip to anyone whose code was used 
+• Inspiration 
+• etc
